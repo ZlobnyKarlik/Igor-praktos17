@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace mq
+{
+    /// <summary>
+    /// Логика взаимодействия для MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+        //расчитываем площадь прямоугольника 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+      
+            int a = Convert.ToInt32(tb1.Text);
+            int b = Convert.ToInt32(tb2.Text);
+            if (a =true || b= true)
+            {
+                rez.Text = Convert.ToString((a * b));
+            }
+            else MessageBox.Show("вводи цифры");
+        }
+        //переворачиваем число
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            int x = Convert.ToInt32(tb3.Text);
+            rez1.Text = Convert.ToString((x%10*100+x/10%10*10+x/100));
+        }
+        //кнопка для отчистки всего задания
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            tb1.Clear();
+            tb2.Clear();
+            tb3.Clear();
+            rez.Clear();
+            rez1.Clear();
+        }
+        //стераем первое задание
+        private void tb1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            tb2.Clear();
+            rez.Clear();
+        }
+        //стерам 2ое задание
+        private void tb3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            rez1.Clear();
+        }
+    }
+}
